@@ -14,9 +14,9 @@ This is a maximum power point tracking solar charger for single-cell LiPo batter
 
 Repository Contents
 -------------------
-* **/Fritzing** - Fritzing Example wiring images
-* **/Hardware** - All Eagle design files (.brd, .sch)
-* **/Production** - Test bed files and production panel files
+* **/Firmware** - Código Arduino
+* **/Hardware** - Eagle design files (.brd, .sch)
+* **/App** - Código da aplicação android
 
 Product Versions
 ----------------
