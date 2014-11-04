@@ -7,9 +7,9 @@ O joystick analógico de cadeira de rodas possuem um comportamento padrão, mais
 
 A essência para emular um joystick é produzir um sinal de referência de 6v e dois (x e y) sinais analógicos reais com 6v e variação de 10% de alimentação (1,2v para alimentação de 12v) para mais ou para menos, ou seja de 4,8v até 7,2v. Abaixo a figura de um joystick analógico padrão:
 
-[![Joystick analógico JC200](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
+![Joystick analógico JC200](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
 
-*Joystick JC200 (Part Number: JC200BS1K1Y de 12V ) fonte: Farnell*](http://www.farnellnewark.com.br/chavetipojoystick12vdc,product,01M8005,4614452.aspx)
+*Joystick JC200 (Part Number: JC200BS1K1Y de 12V ). Fonte: [Farnell](http://www.farnellnewark.com.br/chavetipojoystick12vdc,product,01M8005,4614452.aspx)*
 
 Como funciona
 -------------------
