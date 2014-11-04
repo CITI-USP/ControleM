@@ -24,7 +24,7 @@ Repository Contents
 -------------------
 * **/Firmware** - Código Arduino
 * **/Hardware** - Eagle design files (.brd, .sch)
-* **/App** - Código da aplicação android
+* **/App** - Código da aplicação Android
 
 License Information
 -------------------
