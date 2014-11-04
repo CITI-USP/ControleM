@@ -2,7 +2,7 @@ ControleM
 =========
 
 [![Joystick analógico JC200](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
-*Sunny Buddy (PRT-12885)*](https://www.sparkfun.com/products/12885)
+*Joystick JC200 (Part Number: JC200BS1K1Y de 12V ) fonte: Farnell*](http://www.farnellnewark.com.br/chavetipojoystick12vdc,product,01M8005,4614452.aspx)
 
 This is a maximum power point tracking solar charger for single-cell LiPo batteries. 
 
