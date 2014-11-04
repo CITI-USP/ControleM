@@ -18,11 +18,15 @@ Uma [Arduino Due](http://arduino.cc/en/Main/ArduinoBoardDue) com um circuito adi
 Um módulo Bluetooth serial provê a comunicação remota sem fio, através de um protocolo simples e robusto são recebidos os dados necessário para controlar as saídas DAC.
 
 A figura abaixo apresenta o circuto necessário:
-![Esquemático](https://dl.dropboxusercontent.com/u/42132965/ControleM/ControleM.png)*Esquemático*
 
-![Arduino Due e Shield](https://dl.dropboxusercontent.com/u/42132965/ControleM/ArduinoDueShield.jpg)*Arduino Due e Shield*
+*Esquemático:*
+![Esquemático](https://dl.dropboxusercontent.com/u/42132965/ControleM/ControleM.png)
 
-![Arduino Due e Shield montada](https://dl.dropboxusercontent.com/u/42132965/ControleM/ArduinoDueShieldMontadas1.jpg)*Arduino Due e Shield montada*
+*Arduino Due e Shield:*
+![Arduino Due e Shield](https://dl.dropboxusercontent.com/u/42132965/ControleM/ArduinoDueShield.jpg)
+
+*Arduino Due e Shield montada:*
+![Arduino Due e Shield montada](https://dl.dropboxusercontent.com/u/42132965/ControleM/ArduinoDueShieldMontadas1.jpg)
 
 Mapa do projeto
 ---------------
