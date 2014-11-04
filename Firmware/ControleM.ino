@@ -1,12 +1,13 @@
 #define ANALOG_MODE 0
 #define DIGITAL_MODE 1
 #define START_CMD_CHAR '*'
-#define DATA_SIZE 6
+#define DATA_SIZE 8
 #define D_FRONT 9
 #define D_BACK 8
 #define D_RIGHT 7
 #define D_LEFT 6
 #define D_BUTTON 5
+#define LED 13
 #define AXIS_MAX 4095
 #define AXIS_MIN 0
 #define AXIS_MID 2047
@@ -21,6 +22,8 @@ int y;
 int flag_register;
 byte return_code;
 int timer;
+byte checksum = 0;
+
 
 
 void setup() {
@@ -38,9 +41,10 @@ void setup() {
   pinMode(D_RIGHT, OUTPUT); digitalWrite(D_RIGHT, LOW);
   pinMode(D_LEFT, OUTPUT); digitalWrite(D_LEFT, LOW);
   pinMode(D_BUTTON, OUTPUT); digitalWrite(D_BUTTON, LOW);
+  pinMode(LED, OUTPUT); digitalWrite(LED, LOW);
 
-  if(debug) Serial.begin(9600);
-  Serial1.begin(9600);
+  if(debug) Serial.begin(115200);
+  Serial1.begin(115200);
   Serial1.flush();
   timer = millis();
 }
@@ -57,6 +61,7 @@ void loop() {
     digitalWrite(D_RIGHT, LOW);
     digitalWrite(D_LEFT, LOW);
     digitalWrite(D_BUTTON, LOW);
+    digitalWrite(LED, LOW);
     if(debug) Serial.println("******************* Ponto Morto *******************");
   }
     
@@ -75,25 +80,39 @@ void loop() {
    
   if(return_code==DATA_SIZE) {
     if(debug)  for(int i=0;i<DATA_SIZE;i++)  Serial.println(String("data")+i+String("=")+data[i]);
-    for(int i=0;i<DATA_SIZE;i++)
     
+    //checksum
+    checksum = 0;
+    for (int i=0; i<DATA_SIZE-1; i++)  checksum+=data[i];
+       
+    Serial.println(String("checksum enviado=")+data[DATA_SIZE-1]+ String("checksum calculado=")+checksum);
+    if(data[DATA_SIZE-1]==checksum) {if(debug) Serial.println("Checksum OK!");}
+    else{
+      if(debug) Serial.println("Checksum - Packet Fail! *************************************");
+      return;
+    }
+        
+        
     timer = millis();
+    digitalWrite(LED, HIGH);
+    
     x = data[0] << 8;
     x += data[1];
     y = data[2] << 8;
     y += data[3];
     flag_register = data[4] << 8;
     flag_register += data[5];
+       
     
     mode = flag_register & 0x01;
     if(debug) Serial.println(String("X: ") + x  + String(" Y: ") + y + String(" MODE: ") + mode);
     
+    
+    
     if(mode == ANALOG_MODE) {
       if(x > AXIS_MAX) x = AXIS_MAX;
       if(y > AXIS_MAX) y = AXIS_MAX;
-      
-      a tensão real ficou entre 6,8v e 5,2v
-      checksum e sequencial
+            
       analogWrite(DAC0, map(x,0,4095,1638,2457));//out (1638 a 2457) metade de 4095 = 2047 sendo que 1638(-10% de vcc) e 2457(+10% vcc) padrão para joystick de cadeira de rodas
       analogWrite(DAC1, map(y,0,4095,1638,2457));//out (1638 a 2457) metade de 4095 = 2047 sendo que 1638(-10% de vcc) e 2457(+10% vcc) padrão para joystick de cadeira de rodas
     }
@@ -129,6 +148,7 @@ void loop() {
       if(button_value) button_value = HIGH; else button_value = LOW;
       digitalWrite(D_BUTTON, button_value);
     }
+    digitalWrite(LED, LOW);
   }
 }
 
