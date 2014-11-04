@@ -42,10 +42,10 @@ O smartphone deve enviar pacotes seriais de 8 bytes seguindo o protocolo abaixo:
 |Sequência | Descrição                               |
 |----------|-----------------------------------------|
 |Byte 0    | Início da sequência (*)                 |
-|Byte 1    | Coordenada X - Byte mais significativo  |
-|Byte 2    | Coordenada X - Byte menos significativo |
-|Byte 3    | Coordenada Y - Byte mais significativo  |
-|Byte 4    | Coordenada Y - Byte menos significativo |
+|Byte 1    | Coordenada X - byte mais significativo  |
+|Byte 2    | Coordenada X - byte menos significativo |
+|Byte 3    | Coordenada Y - byte mais significativo  |
+|Byte 4    | Coordenada Y - byte menos significativo |
 |Byte 5    | Flag register - primeiro byte           |
 |Byte 6    | Flag register - segundo byte            |
 |Byte 7    | Número de sequência                     |
