@@ -54,9 +54,13 @@ O smartphone deve enviar pacotes seriais de 8 bytes seguindo o protocolo abaixo:
 Ao reconhecer o primeiro byte, o firmware inicia a sequência de leitura do pacote.
 
 Os bytes 1 e 2 contém a coordenada X do joystick, um valor de 0 a 4093.
+
 Os bytes 3 e 4 contém a coordenada Y do joystick, um valor de 0 a 4093.
+
 Os bytes 5 e 6 são um conjunto de bits para enviar informações genéricas do smartphone para a App. No exemplo atual, apenas o último bit do byte 6 é usado, para informar o modo de operação do firmware.
+
 O byte 7 é um byte que contém o número de sequência do pacote enviado, e é usado para verificar se um mesmo pacote não foi enviado mais de uma vez por problema de conexão entre placa e smartphone.
+
 O byte 8 é um byte de verificação, que contém a soma dos bytes anteriores (exceto o byte 0), e é usado para confirmar que não houve corrupção do pacote enviado.
 
 Mapa do projeto
