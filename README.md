@@ -49,7 +49,7 @@ O smartphone deve enviar pacotes seriais de 8 bytes seguindo o protocolo abaixo:
 |Byte 5    | Flag register - primeiro byte           |
 |Byte 6    | Flag register - segundo byte            |
 |Byte 7    | Número de sequência                     |
-|Byte 7    | Byte de verificação - Checksum          |
+|Byte 8    | Byte de verificação - Checksum          |
 
 Ao reconhecer o valor do byte 0 como o caracter *, o firmware inicia a sequência de leitura do pacote.
 
