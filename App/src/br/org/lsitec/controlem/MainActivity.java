@@ -12,15 +12,26 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.TableLayout.LayoutParams;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zerokol.views.JoystickView;
+import com.zerokol.views.JoystickView.OnJoystickMoveListener;
+
 public class MainActivity extends Activity {
 
+	JoystickView joystick;
+	
 	BluetoothAdapter mBluetoothAdapter;
 	BluetoothDevice arduino;
 	
@@ -33,24 +44,50 @@ public class MainActivity extends Activity {
 	SendCommandThread command;
 	Button btnUp, btnDown, btnLeft, btnRight;
 	ConnectThread connect;
-	boolean btnUpPressed, btnDownPressed, btnLeftPressed, btnRightPressed, btnStopPressed;
 	
+	Switch mode_switch;
+	double speed_x = .5;
+	double speed_y = .5;
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+		mode_switch = (Switch)findViewById(R.id.mode_switch);
+		joystick = (JoystickView)findViewById(R.id.joystick);
+		joystick.setOnJoystickMoveListener(new OnJoystickMoveListener() {
+			@Override
+			public void onValueChanged(int angle, int power, int direction) {
+				double y = power*Math.cos(Math.toRadians(angle));
+				double x = power*Math.sin(Math.toRadians(angle));
+				y+=100;
+				x+=100;
+				y/=200;
+				x/=200;
+				speed_x = x;
+				speed_y = y;
+			}
+		}, JoystickView.DEFAULT_LOOP_INTERVAL);
+		
 		updateStatus("Desconectado");
+		mode_switch.setOnCheckedChangeListener(new OnCheckedChangeListener() {			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				alternarModo();
+			}
+		});
+				
 		btnUp = (Button)findViewById(R.id.btnUp);
 		btnUp.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				switch(event.getAction()){
 				case MotionEvent.ACTION_DOWN:
-					btnUpPressed = true;
+					speed_y+=.5;
 					break;
 				case MotionEvent.ACTION_UP:
-					btnUpPressed = false;
+					speed_y-=.5;
 					break;
 				}
 				return false;
@@ -62,10 +99,10 @@ public class MainActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				switch(event.getAction()){
 				case MotionEvent.ACTION_DOWN:
-					btnDownPressed = true;
+					speed_y-=.5;
 					break;
 				case MotionEvent.ACTION_UP:
-					btnDownPressed = false;
+					speed_y+=.5;
 					break;
 				}
 				return false;
@@ -77,10 +114,10 @@ public class MainActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				switch(event.getAction()){
 				case MotionEvent.ACTION_DOWN:
-					btnRightPressed = true;
+					speed_x+=.5;
 					break;
 				case MotionEvent.ACTION_UP:
-					btnRightPressed = false;
+					speed_x-=.5;
 					break;
 				}
 				return false;
@@ -92,15 +129,16 @@ public class MainActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				switch(event.getAction()){
 				case MotionEvent.ACTION_DOWN:
-					btnLeftPressed = true;
+					speed_x-=.5;
 					break;
 				case MotionEvent.ACTION_UP:
-					btnLeftPressed = false;
+					speed_x+=.5;
 					break;
 				}
 				return false;
 			}
 		});		
+		alternarModo();
 	}
 	
 	private class ConnectThread extends Thread {
@@ -117,7 +155,6 @@ public class MainActivity extends Activity {
 	            // MY_UUID is the app's UUID string, also used by the server code
 	        	System.out.println(device.getUuids()[0].getUuid().toString());
 	            tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
-//	            tmp = device.createInsecureRfcommSocketToServiceRecord(device.getUuids()[0].getUuid());
 	        } catch (IOException e) { }
 	        mmSocket = tmp;
 	    }
@@ -159,7 +196,7 @@ public class MainActivity extends Activity {
 	    private final BluetoothSocket mmSocket;
 	    private final InputStream mmInStream;
 	    private final OutputStream mmOutStream;
-	    int count = 0;
+	    byte count = 0;
 	 
 	    public SendCommandThread(BluetoothSocket socket) {
 	    	System.out.println("CONECTOU");
@@ -180,15 +217,9 @@ public class MainActivity extends Activity {
 	 
 	    public void run() {
 	    	while(true){
-	    		double x=.5, y=.5;
-	    		if(btnUpPressed)y+=.5;
-	    		if(btnDownPressed)y-=.5;
-	    		if(btnRightPressed)x+=.5;
-	    		if(btnLeftPressed)x-=.5;
-//	    		System.out.println(x+","+y+"\nUp:"+btnUpPressed+"\nDown:"+btnDownPressed+"\nLeft:"+btnLeftPressed+"\nRight:"+btnRightPressed);
-	    		sendCommand(x, y);
+	    		sendCommand(speed_x, speed_y);
 	    		try {
-					sleep(100);
+					sleep(20);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -212,7 +243,7 @@ public class MainActivity extends Activity {
             buffer[4] = (byte)(0x00ff & new_y);
             buffer[5] = (byte)0;
             buffer[6] = (byte)0;
-            buffer[7] = (byte)(0x00ff & count);
+            buffer[7] = count;
             byte b = 0;
             for(int i=1; i<buffer.length-1; i++)
             	b+=buffer[i];
@@ -282,6 +313,21 @@ public class MainActivity extends Activity {
 	    		status.setText(message);
 	        }
 	    });
+	}
+	
+	public void alternarModo(){
+/*		MotionEvent e = MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis()+10, MotionEvent.ACTION_UP,0,0,0);
+		joystick.onTouchEvent(e);*/
+		
+		RelativeLayout layout_analogico = (RelativeLayout)findViewById(R.id.controle_analogico);
+		RelativeLayout layout_digital = (RelativeLayout)findViewById(R.id.controle_digital);
+		if(mode_switch.isChecked()){
+			layout_analogico.setVisibility(View.GONE);
+			layout_digital.setVisibility(View.VISIBLE);
+		}else{
+			layout_analogico.setVisibility(View.VISIBLE);
+			layout_digital.setVisibility(View.GONE);
+		}
 	}
 
 }

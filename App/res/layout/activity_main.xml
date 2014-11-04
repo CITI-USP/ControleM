@@ -5,14 +5,29 @@
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
-        android:id="@+id/status"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Switch
+            android:id="@+id/mode_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Modo digital" />
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/controle_digital"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent" >
 
         <Button
@@ -48,20 +63,25 @@
             android:text="Up" />
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/controle_analogico"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        android:orientation="vertical" >
+        android:layout_height="match_parent">
+        
+        <com.zerokol.views.JoystickView
+            android:id="@+id/joystick"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            
+        </com.zerokol.views.JoystickView>
 
-        <ImageView
+<!--        <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
-            android:src="@drawable/pattern" />
-        
-    </LinearLayout>
+            android:src="@drawable/pattern" />-->
+    </RelativeLayout>
 
 </LinearLayout>
