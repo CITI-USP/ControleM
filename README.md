@@ -5,12 +5,12 @@ ControleM
 
 
 [![Vídeo de demonstração proprocional ](http://img.youtube.com/vi/2mQoy-6fy2M/0.jpg)](https://www.youtube.com/watch?v=2mQoy-6fy2M)
-
 *Vídeo de demonstração do protótipo com controle proporcional (multi direcional)*
 
-[![Vídeo de demonstração discreto](http://img.youtube.com/vi/nm2pQ9PgypI/0.jpg)](https://www.youtube.com/watch?v=nm2pQ9PgypI)
 
+[![Vídeo de demonstração discreto](http://img.youtube.com/vi/nm2pQ9PgypI/0.jpg)](https://www.youtube.com/watch?v=nm2pQ9PgypI)
 *Vídeo de demonstração do protótipo com controle discreto (quatro direções)*
+
 
 O joystick analógico de cadeira de rodas possuem um comportamento padrão, mais informações em  [Interfaces de entrada para Cadeira de rodas motorizada](http://marchanjo.blogspot.com.br/2013/07/interface-de-entrada-para-cadeira-de.html).
 
