@@ -19,7 +19,7 @@ Um módulo Bluetooth serial provê a comunicação remota sem fio, através de u
 A figura abaixo apresenta o circutio necessário:
 
 
-[![Arduino Due com Shield] (https://drive.google.com/file/d/0ByBDjAJu4l-IUEFfQnBoemRwbk0/view?usp=sharing)]
+
 
 Repository Contents
 -------------------
