@@ -20,20 +20,11 @@ A figura abaixo apresenta o circutio necessário:
 ![Arduino Due e Shield](https://dl.dropboxusercontent.com/u/42132965/controlem/Arduino%20Due%20e%20Shield.jpg)*Arduino Due e Shield*
 
 
-
 Repository Contents
 -------------------
 * **/Firmware** - Código Arduino
 * **/Hardware** - Eagle design files (.brd, .sch)
 * **/App** - Código da aplicação android
-
-Product Versions
-----------------
-* [PRT-12084](https://www.sparkfun.com/products/12084)- Version 1.0
-
-Version History
----------------
-* [v10](https://github.com/sparkfun/SunnyBuddy/tree/HW_V1.0) -GitHub files for v1.0
 
 License Information
 -------------------
