@@ -5,7 +5,7 @@ ControleM
 
 O joystick analógico de cadeira de rodas possuem um comportamento padrão, mais informações em:
 
-*Interfaces de entrada para Cadeira de rodas motorizada*(http://marchanjo.blogspot.com.br/2013/07/interface-de-entrada-para-cadeira-de.html)
+[Interfaces de entrada para Cadeira de rodas motorizada](http://marchanjo.blogspot.com.br/2013/07/interface-de-entrada-para-cadeira-de.html)
 
 
 [![Joystick analógico JC200](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
