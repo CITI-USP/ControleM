@@ -51,7 +51,7 @@ O smartphone deve enviar pacotes seriais de 8 bytes seguindo o protocolo abaixo:
 |Byte 7    | Número de sequência                     |
 |Byte 7    | Byte de verificação - Checksum          |
 
-Ao reconhecer o primeiro byte, o firmware inicia a sequência de leitura do pacote.
+Ao reconhecer o valor do byte 0 como o caracter *, o firmware inicia a sequência de leitura do pacote.
 
 Os bytes 1 e 2 contém a coordenada X do joystick, um valor de 0 a 4093.
 
