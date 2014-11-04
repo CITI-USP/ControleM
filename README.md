@@ -4,7 +4,8 @@ ControleM
 É um emulador de joystick analógico de cadeira de rodas motorizada controlado por Smartphone.
 
 [![Vídeo de demonstração](http://img.youtube.com/vi/nm2pQ9PgypI/0.jpg)](https://www.youtube.com/watch?v=nm2pQ9PgypI)
-Vídeo de demonstração do protótipo
+
+*Vídeo de demonstração do protótipo*
 
 O joystick analógico de cadeira de rodas possuem um comportamento padrão, mais informações em  [Interfaces de entrada para Cadeira de rodas motorizada](http://marchanjo.blogspot.com.br/2013/07/interface-de-entrada-para-cadeira-de.html).
 
