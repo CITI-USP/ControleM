@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/controle_digital"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btnUp"
+            android:text="Right" />
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btnUp"
+            android:text="Left" />
+
+        <Button
+            android:id="@+id/btnDown"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btnRight"
+            android:layout_centerHorizontal="true"
+            android:text="Down" />
+
+        <Button
+            android:id="@+id/btnUp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/btnRight"
+            android:layout_alignLeft="@+id/btnDown"
+            android:text="Up" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/controle_analogico"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/pattern" />
+        
+    </LinearLayout>
+
+</LinearLayout>
