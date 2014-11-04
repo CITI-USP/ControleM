@@ -34,4 +34,5 @@ The hardware and the software are released under [Creative Commons ShareAlike 4.
 
 
 Distribuido como está, nenhuma garantia é dada.
+
 Distributed as-is; no warranty is given.
