@@ -37,9 +37,9 @@ Version History
 
 License Information
 -------------------
-O hardware e o software estão disponiveis em  [Creative Commons ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+O hardware e o software estão disponiveis em [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/).
 
-The hardware and the software are released under [Creative Commons ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
+The hardware and the software are released under [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/).
 
 
 Distribuido como está, nenhuma garantia é dada.
