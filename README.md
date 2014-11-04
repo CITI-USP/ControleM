@@ -1,6 +1,13 @@
 ControleM
 =========
 
+É um emulador de joystick analógico de cadeira de rodas motorizada controlado por Smartphone.
+
+O joystick analógico de cadeira de rodas possuem um comportamento padrão, mais informações em:
+
+*Interfaces de entrada para Cadeira de rodas motorizada*(http://marchanjo.blogspot.com.br/2013/07/interface-de-entrada-para-cadeira-de.html)
+
+
 [![Joystick analógico JC200](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
 *Joystick JC200 (Part Number: JC200BS1K1Y de 12V ) fonte: Farnell*](http://www.farnellnewark.com.br/chavetipojoystick12vdc,product,01M8005,4614452.aspx)
 
