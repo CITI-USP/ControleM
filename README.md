@@ -1,7 +1,7 @@
 ControleM
 =========
 
-[![Sunny Buddy](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
+[![Joystick analógico JC200](http://3.bp.blogspot.com/-hqsU5Gdmz_E/Ud2zLGnaRcI/AAAAAAAABj8/vSfEUgOKIYg/s1600/JC200.jpg)
 *Sunny Buddy (PRT-12885)*](https://www.sparkfun.com/products/12885)
 
 This is a maximum power point tracking solar charger for single-cell LiPo batteries. 
