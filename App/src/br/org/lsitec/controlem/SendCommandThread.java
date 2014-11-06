@@ -8,7 +8,7 @@ import android.bluetooth.BluetoothSocket;
 
 class SendCommandThread extends Thread {
 	    /**
-		 * 
+		 *  Envia dados para a placa de acordo com o protocolo
 		 */
 		private MainActivity mainActivity;
 		private final BluetoothSocket mmSocket;
@@ -52,24 +52,29 @@ class SendCommandThread extends Thread {
 	    	int new_y = (int) Math.floor(y*4095);
 	    	new_x = Math.min(4095, Math.max(new_x, 0));
 	    	new_y = Math.min(4095, Math.max(new_y, 0));
-//	    	System.out.println("X:"+new_x+" Y:"+new_y);
+
 	        byte[] buffer = new byte[9];  // buffer store for the stream
 	        
+	        // início da sequência
             buffer[0] = (byte)'*';
+            // valor do eixo X (2 bytes)
             buffer[1] = (byte)((0xff00 & new_x)>>8); 
             buffer[2] = (byte)(0x00ff & new_x);
+            // valor do eixo Y (2 bytes)
             buffer[3] = (byte)((0xff00 & new_y)>>8);
             buffer[4] = (byte)(0x00ff & new_y);
+            // flags (2 bytes)
             buffer[5] = (byte)0;
             buffer[6] = (byte)0;
+            // número sequencial
             buffer[7] = count;
+            // checksum
             byte b = 0;
             for(int i=1; i<buffer.length-1; i++)
             	b+=buffer[i];
             buffer[8] = b;
+            
             write(buffer);
-            // Send the obtained bytes to the UI activity
-//            System.out.println("enviou");
 	    }
 	 
 	    /* Call this from the main activity to send data to the remote device */
