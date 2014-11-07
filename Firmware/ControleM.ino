@@ -16,13 +16,14 @@
 boolean debug = true;
 byte mode = ANALOG_MODE;
 char get_char = ' ';
-byte data[DATA_SIZE];
+byte data[DATA_SIZE];//data[0] - mais sig. X, data[1] - menos sig. X, data[2] - mais sig. Y, data[3] - menos sig. Y, data[4] - Flag Register, data[5] - Flag Register, data[6] - Sequencial do pacote, data[7] - Checksum
 int x;
 int y;
 int flag_register;
 byte return_code;
 int timer;
 byte checksum = 0;
+byte last_sequence = 255;//como o celular começa a sequencia com 0, last_sequence é inicializado com 255 para evitar um erro no primeiro pacote
 
 
 
@@ -80,6 +81,13 @@ void loop() {
    
   if(return_code==DATA_SIZE) {
     if(debug)  for(int i=0;i<DATA_SIZE;i++)  Serial.println(String("data")+i+String("=")+data[i]);
+    
+    if(data[DATA_SIZE-2]!=last_sequence) {if(debug) Serial.println("Sequence OK!");}
+    else{
+      if(debug) Serial.println("Sequence Error ! &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+      return;
+    }
+    last_sequence=data[DATA_SIZE-2];
     
     //checksum
     checksum = 0;
