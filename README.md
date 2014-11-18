@@ -24,13 +24,13 @@ Um módulo Bluetooth serial provê a comunicação remota sem fio, através de u
 A figura abaixo apresenta o circuto necessário:
 
 *Esquemático:*
-![Esquemático](https://dl.dropboxusercontent.com/u/42132965/ControleM/ControleM.png)
+![Esquemático](https://github.com/Marchanjo/ControleM/blob/master/Doc/ControleM.png)
 
 *Arduino Due e Shield:*
-![Arduino Due e Shield](https://dl.dropboxusercontent.com/u/42132965/ControleM/ArduinoDueShield.jpg)
+![Arduino Due e Shield](https://github.com/Marchanjo/ControleM/blob/master/Doc/ArduinoDueShield.jpg)
 
 *Arduino Due e Shield montada:*
-![Arduino Due e Shield montada](https://dl.dropboxusercontent.com/u/42132965/ControleM/ArduinoDueShieldMontadas1.jpg)
+![Arduino Due e Shield montada](https://github.com/Marchanjo/ControleM/blob/master/Doc/ArduinoDueShieldMontadas1.jpg)
 
 Protocolo de comunicação
 ------------------------
@@ -68,6 +68,7 @@ Mapa do projeto
 * **/Firmware** - Código Arduino
 * **/Hardware** - Arquivos de design, formato Eagle
 * **/App** - Código da aplicação Android
+* **/Doc** - Arquivos adicionais usados no Read Me
 
 Licença
 -------
