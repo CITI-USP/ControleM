@@ -71,9 +71,9 @@ Mapa do projeto
 
 Licença
 -------
-O hardware e o software estão disponiveis em [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/).
+O hardware e o software estão disponiveis em [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/)![by-sa-4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-The hardware and the software are released under [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/).
+The hardware and the software are released under [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/)![by-sa-4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
 
 Distribuido como está, nenhuma garantia é dada.
