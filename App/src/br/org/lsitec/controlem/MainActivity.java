@@ -1,5 +1,7 @@
 package br.org.lsitec.controlem;
 
+import br.org.lsitec.controlem.*;
+
 import java.util.Set;
 import java.util.UUID;
 
@@ -48,6 +50,11 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+		
+		// teste de camera
+		startActivity(new Intent(getApplicationContext(), FaceController.class));
+		
+		
 		mode_switch = (Switch)findViewById(R.id.mode_switch);
 		joystick = (JoystickView)findViewById(R.id.joystick);
 		joystick.setOnJoystickMoveListener(new OnJoystickMoveListener() {
@@ -133,6 +140,7 @@ public class MainActivity extends Activity {
 			}
 		});		
 		alternarModo();
+		
 	}
 	
 	@Override 
