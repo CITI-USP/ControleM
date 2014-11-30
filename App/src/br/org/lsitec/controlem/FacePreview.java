@@ -4,7 +4,12 @@ import java.io.IOException;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.hardware.Camera;
+import android.hardware.Camera.Face;
 import android.hardware.Camera.Parameters;
 import android.os.Build;
 import android.util.Log;
@@ -21,8 +26,17 @@ public class FacePreview extends SurfaceView implements SurfaceHolder.Callback {
 	private static final String TAG = FacePreview.class.toString();
 	private SurfaceHolder mHolder;
     private Camera mCamera;
+    private Face[] faces;
 
-    public FacePreview(Context context, Camera camera) {
+    public Face[] getFaces() {
+		return faces;
+	}
+
+	public void setFaces(Face[] faces) {
+		this.faces = faces;
+	}
+
+	public FacePreview(Context context, Camera camera) {
         super(context);
         mCamera = camera;
 
@@ -120,5 +134,20 @@ public class FacePreview extends SurfaceView implements SurfaceHolder.Callback {
             mCamera.setDisplayOrientation(180);
 			break;
 		}*/
+	}
+	
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		
+		Paint myPaint = new Paint();
+		myPaint.setColor(Color.GREEN);
+		myPaint.setStyle(Paint.Style.STROKE); 
+		myPaint.setStrokeWidth(3);
+
+		for(Face face : faces)
+		{
+			canvas.drawRect(face.rect, myPaint);
+		}
 	}
 }
