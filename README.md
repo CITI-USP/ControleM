@@ -69,6 +69,7 @@ Mapa do projeto
 * **/Hardware** - Arquivos de design, formato Eagle
 * **/App** - Código da aplicação Android
 * **/Doc** - Arquivos adicionais usados no Read Me
+* **/Bin** - Arquivos binários
 
 Licença
 -------
