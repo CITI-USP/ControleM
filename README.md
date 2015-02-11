@@ -19,7 +19,7 @@ Como funciona
 -------------
 Uma [Arduino Due](http://arduino.cc/en/Main/ArduinoBoardDue) com um circuito adicional é alimentado pela cadeira de rodas motorizada (12v 100mA), como se fosse um joystick analógio padrão. A Arduino Due possui duas saídas DAC ((digital to analog) de 3,3v (Arduino Due  trabalha com 3,3v) com amplificadores operacionais esta saídas são elevadas para 12v, sendo que são programadas para ficarem no meio da escala (6v) e variar 1,2v para mais ou para menos.
 
-Um módulo Bluetooth serial provê a comunicação remota sem fio, através de um protocolo simples e robusto são recebidos os dados necessário para controlar as saídas DAC.O módulo Bluettoh teve a velocidade ajustada para 115200 bps com o comando: AT+BAUD8 mais informações: [AT command mode of HC-05 and HC-06 Bluetooth module] ( http://www.instructables.com/id/AT-command-mode-of-HC-05-Bluetooth-module/?ALLSTEPS)
+Um módulo Bluetooth serial provê a comunicação remota sem fio, através de um protocolo simples e robusto são recebidos os dados necessário para controlar as saídas DAC. O módulo Bluettoh teve a velocidade ajustada para 115200 bps com o comando: AT+BAUD8 mais informações: [AT command mode of HC-05 and HC-06 Bluetooth module] ( http://www.instructables.com/id/AT-command-mode-of-HC-05-Bluetooth-module/?ALLSTEPS)
 
 A figura abaixo apresenta o circuto necessário:
 
