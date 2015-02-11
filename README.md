@@ -1,4 +1,4 @@
-ControleM
+﻿ControleM
 =========
 
 É um emulador de joystick analógico de cadeira de rodas motorizada controlado por Smartphone.
@@ -19,7 +19,7 @@ Como funciona
 -------------
 Uma [Arduino Due](http://arduino.cc/en/Main/ArduinoBoardDue) com um circuito adicional é alimentado pela cadeira de rodas motorizada (12v 100mA), como se fosse um joystick analógio padrão. A Arduino Due possui duas saídas DAC ((digital to analog) de 3,3v (Arduino Due  trabalha com 3,3v) com amplificadores operacionais esta saídas são elevadas para 12v, sendo que são programadas para ficarem no meio da escala (6v) e variar 1,2v para mais ou para menos.
 
-Um módulo Bluetooth serial provê a comunicação remota sem fio, através de um protocolo simples e robusto são recebidos os dados necessário para controlar as saídas DAC.
+Um módulo Bluetooth serial provê a comunicação remota sem fio, através de um protocolo simples e robusto são recebidos os dados necessário para controlar as saídas DAC.O módulo Bluettoh teve a velocidade ajutada para 115200 bps.
 
 A figura abaixo apresenta o circuto necessário:
 
