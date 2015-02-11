@@ -10999,6 +10999,7 @@ type 0309, grid 2.5 mm</description>
 <part name="SUPPLY15" library="supply2" deviceset="V--&gt;" device=""/>
 <part name="SUPPLY16" library="supply2" deviceset="V--&gt;" device=""/>
 <part name="SUPPLY17" library="supply2" deviceset="V--&gt;" device=""/>
+<part name="ARDUINO_ANALOG2" library="supply2" deviceset="V--&gt;" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11026,6 +11027,7 @@ type 0309, grid 2.5 mm</description>
 <text x="88.9" y="-106.68" size="1.778" layer="95">MÓDULO BLUETOOTH</text>
 <rectangle x1="154.94" y1="-55.88" x2="205.74" y2="78.74" layer="100"/>
 <text x="193.04" y="-53.34" size="1.778" layer="95">JOYSTICK</text>
+<text x="10.16" y="-43.18" size="1.778" layer="91">ARDUINO-ANALOG2</text>
 </plain>
 <instances>
 <instance part="U1" gate="A" x="111.76" y="50.8"/>
@@ -11071,6 +11073,7 @@ type 0309, grid 2.5 mm</description>
 <instance part="SUPPLY15" gate="G$1" x="86.36" y="-83.82" rot="MR0"/>
 <instance part="SUPPLY16" gate="G$1" x="172.72" y="60.96" rot="MR0"/>
 <instance part="SUPPLY17" gate="G$1" x="172.72" y="76.2" rot="MR0"/>
+<instance part="ARDUINO_ANALOG2" gate="G$1" x="38.1" y="-43.18"/>
 </instances>
 <busses>
 </busses>
@@ -11100,6 +11103,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="53.34" y1="35.56" x2="60.96" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="60.96" y1="35.56" x2="60.96" y2="33.02" width="0.1524" layer="91"/>
+<junction x="60.96" y="35.56"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -11119,6 +11123,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="142.24" y1="60.96" x2="144.78" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="60.96" x2="144.78" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="60.96" x2="144.78" y2="60.96" width="0.1524" layer="91"/>
+<junction x="144.78" y="60.96"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -11145,6 +11150,8 @@ type 0309, grid 2.5 mm</description>
 <wire x1="60.96" y1="81.28" x2="60.96" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="76.2" x2="60.96" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="76.2" x2="60.96" y2="76.2" width="0.1524" layer="91"/>
+<junction x="60.96" y="60.96"/>
+<junction x="60.96" y="76.2"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -11156,6 +11163,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="104.14" y1="-2.54" x2="99.06" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="7.62" x2="104.14" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="7.62" x2="104.14" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="104.14" y="-2.54"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -11167,17 +11175,20 @@ type 0309, grid 2.5 mm</description>
 <wire x1="104.14" y1="-30.48" x2="99.06" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="-20.32" x2="104.14" y2="-20.32" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-20.32" x2="104.14" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="104.14" y="-30.48"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="119.38" y1="-58.42" x2="127" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="A" pin="OUT"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="121.92" y1="-45.72" x2="127" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="127" y1="-45.72" x2="132.08" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-45.72" x2="127" y2="-45.72" width="0.1524" layer="91"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="-45.72" x2="119.38" y2="-45.72" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="-58.42" x2="127" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="127" y1="-58.42" x2="127" y2="-45.72" width="0.1524" layer="91"/>
+<junction x="127" y="-45.72"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -11189,6 +11200,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="121.92" y1="10.16" x2="127" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="127" y1="10.16" x2="132.08" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="127" y1="-2.54" x2="127" y2="10.16" width="0.1524" layer="91"/>
+<junction x="127" y="10.16"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -11200,6 +11212,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="121.92" y1="-17.78" x2="127" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="127" y1="-17.78" x2="132.08" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="127" y1="-30.48" x2="127" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="127" y="-17.78"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -11211,6 +11224,7 @@ type 0309, grid 2.5 mm</description>
 <wire x1="104.14" y1="-58.42" x2="109.22" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="-48.26" x2="104.14" y2="-48.26" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="-48.26" x2="104.14" y2="-58.42" width="0.1524" layer="91"/>
+<junction x="104.14" y="-58.42"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -11229,10 +11243,12 @@ type 0309, grid 2.5 mm</description>
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="R10" gate="G$1" pin="2"/>
-<wire x1="68.58" y1="-40.64" x2="68.58" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="A" pin="+IN"/>
+<wire x1="68.58" y1="-43.18" x2="68.58" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="-43.18" x2="68.58" y2="-43.18" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="-43.18" x2="68.58" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="-43.18" x2="53.34" y2="-43.18" width="0.1524" layer="91"/>
+<junction x="68.58" y="-43.18"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -11274,6 +11290,7 @@ type 0309, grid 2.5 mm</description>
 <pinref part="P-1" gate="1" pin="-12V"/>
 <wire x1="132.08" y1="60.96" x2="134.62" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="50.8" x2="132.08" y2="60.96" width="0.1524" layer="91"/>
+<junction x="132.08" y="60.96"/>
 </segment>
 </net>
 <net name="N$15" class="0">
