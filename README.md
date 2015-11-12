@@ -8,7 +8,7 @@
 |[![Vídeo de demonstração proprocional ](http://img.youtube.com/vi/2mQoy-6fy2M/0.jpg)](https://www.youtube.com/watch?v=2mQoy-6fy2M)|[![Vídeo de demonstração discreto](http://img.youtube.com/vi/nm2pQ9PgypI/0.jpg)](https://www.youtube.com/watch?v=nm2pQ9PgypI)
 
 Este projeto foi apresentado no TOM "Tikkun Olam Makers" 2014
-(http://img.youtube.com/vi/WmIyEbNxP3A/1.jpg)](https://youtu.be/WmIyEbNxP3A)
+[![Vídeo do TOM 2014(http://img.youtube.com/vi/WmIyEbNxP3A/1.jpg)](https://youtu.be/WmIyEbNxP3A)
 
 
 O joystick analógico de cadeira de rodas possuem um comportamento padrão, mais informações em  [Interfaces de entrada para Cadeira de rodas motorizada](http://marchanjo.blogspot.com.br/2013/07/interface-de-entrada-para-cadeira-de.html).
