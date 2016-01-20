@@ -31,10 +31,12 @@ public class MainActivity extends Activity {
 	BluetoothAdapter mBluetoothAdapter;
 	BluetoothDevice arduino;
 	
-	String[] macs = {"88:53:2E:A4:CD:64", //Ubuntu-0
-					 "00:11:12:06:03:59"}; //Arduino
+	String[] macs = {"88:53:2E:A4:CD:64",  //Ubuntu-0
+					 "00:11:12:06:03:59",  //Arduino-0
+					 "98:D3:31:40:18:C2"}; //Arduino-1
 	int REQUEST_ENABLE_BT = 1;
-	String ARDUINO_MAC_ADDRESS = macs[1];
+	String ARDUINO_MAC_ADDRESS_1 = macs[1];
+	String ARDUINO_MAC_ADDRESS_2 = macs[2];
 	UUID MY_UUID;
 	
 	SendCommandThread command;
@@ -152,7 +154,7 @@ public class MainActivity extends Activity {
 		if(pairedDevices.size() > 0){
 			for (BluetoothDevice device : pairedDevices){
 				System.out.println(device.getName()+">"+device.getAddress()+">"+device.getUuids().length);
-				if(device.getAddress().equals(ARDUINO_MAC_ADDRESS)){
+				if(device.getAddress().equals(ARDUINO_MAC_ADDRESS_1) || device.getAddress().equals(ARDUINO_MAC_ADDRESS_2)){
 					arduino = device;
 					connect = new ConnectThread(this, arduino);
 					connect.start();
