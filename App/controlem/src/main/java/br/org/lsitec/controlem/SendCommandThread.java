@@ -15,7 +15,7 @@ class SendCommandThread extends Thread {
 	    private final InputStream mmInStream;
 	    private final OutputStream mmOutStream;
 	    byte count = 0;
-	 
+
 	    public SendCommandThread(MainActivity mainActivity, BluetoothSocket socket) {
 	    	this.mainActivity = mainActivity;
 			System.out.println("CONECTOU");
@@ -61,7 +61,9 @@ class SendCommandThread extends Thread {
             buffer[3] = (byte)((0xff00 & new_y)>>8);
             buffer[4] = (byte)(0x00ff & new_y);
             buffer[5] = (byte)0;
-            buffer[6] = (byte)0;
+			if(mainActivity.mode_switch.isChecked()) buffer[6] = (byte)0;
+			else buffer[6] = (byte)1;
+
             buffer[7] = count;
             byte b = 0;
             for(int i=1; i<buffer.length-1; i++)

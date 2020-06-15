@@ -30,10 +30,11 @@ public class MainActivity extends Activity {
 	
 	BluetoothAdapter mBluetoothAdapter;
 	BluetoothDevice arduino;
-	
 	String[] macs = {"88:53:2E:A4:CD:64",  //Ubuntu-0
-					 "00:11:12:06:03:59",  //Arduino-0
-					 "98:D3:31:40:18:C2"}; //Arduino-1
+			         "00:11:12:06:03:59",  //Arduino-0 (HC05 - preto)
+			         "98:D3:31:40:18:C2"}; //Arduino-1 (HC05 - Controle-M usado na cadeira de rodas)
+	//"00:21:13:03:CD:E1"  //HC05 - Magicbot
+	//String[] macs = {"88:53:2E:A4:CD:64","00:11:12:06:03:59","00:21:13:03:CD:E1","98:D3:31:40:18:C2"};  a ordem afeta o search de paired devices
 	int REQUEST_ENABLE_BT = 1;
 	String ARDUINO_MAC_ADDRESS_1 = macs[1];
 	String ARDUINO_MAC_ADDRESS_2 = macs[2];
@@ -43,7 +44,7 @@ public class MainActivity extends Activity {
 	Button btnUp, btnDown, btnLeft, btnRight;
 	ConnectThread connect;
 	
-	Switch mode_switch;
+	public Switch mode_switch;
 	double speed_x = .5;
 	double speed_y = .5;
 		
@@ -153,7 +154,7 @@ public class MainActivity extends Activity {
 		Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 		if(pairedDevices.size() > 0){
 			for (BluetoothDevice device : pairedDevices){
-				System.out.println(device.getName()+">"+device.getAddress()+">"+device.getUuids().length);
+				System.out.println("Paired: "+device.getName()+">"+device.getAddress()+">"+device.getUuids().length);
 				if(device.getAddress().equals(ARDUINO_MAC_ADDRESS_1) || device.getAddress().equals(ARDUINO_MAC_ADDRESS_2)){
 					arduino = device;
 					connect = new ConnectThread(this, arduino);

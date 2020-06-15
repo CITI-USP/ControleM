@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/App.iml" filepath="$PROJECT_DIR$/App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controlem/App-controlem.iml" filepath="$PROJECT_DIR$/.idea/modules/controlem/App-controlem.iml" group="App/controlem" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ControleM-App.iml" filepath="$PROJECT_DIR$/.idea/modules/ControleM-App.iml" group="App" />
       <module fileurl="file://$PROJECT_DIR$/controlem/controlem.iml" filepath="$PROJECT_DIR$/controlem/controlem.iml" />
     </modules>
   </component>
