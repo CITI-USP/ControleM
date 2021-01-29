@@ -25,7 +25,7 @@ int x;
 int y;
 int flag_register;
 byte return_code;
-int timer;Quando re-compilar mude para unsigned long
+unsigned long timer;//int timer;Quando re-compilar mude para unsigned long
 byte checksum = 0;
 byte last_sequence = 255;//como o celular começa a sequencia com 0, last_sequence é inicializado com 255 para evitar um erro no primeiro pacote
 
@@ -193,5 +193,3 @@ void loop() {
     digitalWrite(LED, LOW);
   }
 }
-
-

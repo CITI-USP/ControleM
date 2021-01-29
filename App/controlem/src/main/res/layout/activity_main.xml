@@ -1,9 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="br.org.lsitec.controlem.MainActivity" >
+
+    <TextView
+        android:id="@+id/tvFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_waiting" />
+
+    <Button
+        android:id="@+id/btConnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/action_connect" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,8 +84,9 @@
     <RelativeLayout
         android:id="@+id/controle_analogico"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent">
-        
+
         <com.zerokol.views.JoystickView
             android:id="@+id/joystick"
             android:layout_centerInParent="true"

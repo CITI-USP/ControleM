@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">ControleM</string>
-
+    <string name="label_version">Version: %1$s</string>
+    <string name="action_connect">Connect</string>
+    <string name="label_waiting">Waiting</string>
+    <string name="label_connected">Connected</string>
 </resources>
